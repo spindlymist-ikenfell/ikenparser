@@ -1,0 +1,23 @@
+{
+    /**
+     * EnemyGhrost drops a sweet sprout when fighting multiple
+     * of them, but only a red mushroom alone
+     */
+    "EnemyGhrost": {
+        "Rewards": { "Operator": "AND", "List": [
+            {
+                "ItemType": "ItemSweetSprout",
+                "MaxRewarded": 1,
+                "Notes": [0],
+            },
+            {
+                "ItemType": "ItemRedMushroom",
+                "MaxRewarded": 1,
+                "MaxOwned": 3,
+            },
+        ]},
+        "Notes": [
+            "only if fighting multiple Ghrosts",
+        ],
+    },
+}

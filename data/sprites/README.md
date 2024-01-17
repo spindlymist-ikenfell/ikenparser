@@ -1,0 +1,1 @@
+[Download ikenpack](https://github.com/webfischi/ikenpack/releases/) and [follow the instructions](https://github.com/webfischi/ikenpack#readme) to export the sprites from `Ikenfell/Atlas/atlas.img`. Then, copy the contents of the `atlas` directory into this one (not the `atlas` directory itself).

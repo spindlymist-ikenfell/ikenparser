@@ -1,0 +1,71 @@
+{
+    /**
+     * EnemyEoc uses a loop to add two small mushrooms
+     */
+    "EnemyEoc": {
+        "Rewards": { "Operator": "AND", "List": [
+            { "ItemType": "ItemSmallMushroom" },
+            { "ItemType": "ItemSmallMushroom" },
+            { "ItemType": "ItemRedMushroom" },
+        ]},
+    },
+
+    /**
+     * A Ghost Pendant can be stolen from EnemyLegionEoc2, 3, and 4
+     * up to 1 per battle/2 total
+     */
+    "EnemyLegionEoc2": {
+        "Stealable": {
+            "Oops": { "Operator": "AND", "List": [
+                { "ItemType": "ItemGhostCookie" },
+            ]},
+            "Nice": { "Operator": "AND", "List": [
+                { "ItemType": "ItemGhostCookie" },
+            ]},
+            "Great": { "Operator": "AND", "List": [
+                { "ItemType": "ItemGhostCookie" },
+                {
+                    "ItemType": "GhostPendant",
+                    "MaxRewarded": 1,
+                    "MaxOwned": 2,
+                },
+            ]},
+        },
+    },
+    "EnemyLegionEoc3": {
+        "Stealable": {
+            "Oops": { "Operator": "AND", "List": [
+                { "ItemType": "ItemGhostCookie" },
+            ]},
+            "Nice": { "Operator": "AND", "List": [
+                { "ItemType": "ItemGhostCookie" },
+            ]},
+            "Great": { "Operator": "AND", "List": [
+                { "ItemType": "ItemGhostCookie" },
+                {
+                    "ItemType": "GhostPendant",
+                    "MaxRewarded": 1,
+                    "MaxOwned": 2,
+                },
+            ]},
+        },
+    },
+    "EnemyLegionEoc4": {
+        "Stealable": {
+            "Oops": { "Operator": "AND", "List": [
+                { "ItemType": "ItemGhostCookie" },
+            ]},
+            "Nice": { "Operator": "AND", "List": [
+                { "ItemType": "ItemGhostCookie" },
+            ]},
+            "Great": { "Operator": "AND", "List": [
+                { "ItemType": "ItemGhostCookie" },
+                {
+                    "ItemType": "GhostPendant",
+                    "MaxRewarded": 1,
+                    "MaxOwned": 2,
+                },
+            ]},
+        },
+    },
+}

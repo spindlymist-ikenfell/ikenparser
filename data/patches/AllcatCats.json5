@@ -1,0 +1,15 @@
+{
+    /**
+     * EnemyAllcatCat derivatives don't have an Init() method but
+     * instead override InitCat() which is called by base.Init()
+     */
+     "EnemyAllcatGrey": {
+        "NameID": "$sooty",
+    },
+    "EnemyAllcatOrange": {
+        "NameID": "$tabby",
+    },
+    "EnemyAllcatWhite": {
+        "NameID": "$snowy",
+    },
+}

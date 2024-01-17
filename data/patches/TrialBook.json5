@@ -1,0 +1,26 @@
+{
+    /**
+     * The Spectacle can be stolen from EnemyTrialBook, but only
+     * one time in a battle (even if there are multiple books)
+     */
+    "EnemyTrialBook": {
+        "Stealable": {
+            "Oops": { "Operator": "AND", "List": [{ "ItemType": "ItemDemonEye" }]},
+            "Nice": { "Operator": "AND", "List": [{ "ItemType": "ItemDemonEye" }]},
+            "Great": { "Operator": "OR", "List": [
+                {
+                    "ItemType": "TheSpectacle",
+                    "Notes": [0],
+                },
+                {
+                    "ItemType": "ItemDemonEye",
+                    //"Notes": [1],
+                },
+            ]},
+        },
+        "Notes": [
+            "only once per battle",
+            //"only if preceding item(s) can't be acquired",
+        ],
+    }
+}

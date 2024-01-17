@@ -1,0 +1,47 @@
+{
+    /**
+     * EnemyCraterFace has different stealable items based on
+     * whether you own a Royal Snug
+     */
+    "EnemyCraterface": {
+        "Stealable": {
+            "Oops": { "Operator": "OR", "List": [
+                {
+                    "ItemType": "ItemCommonCoin",
+                    "Notes": [0],
+                },
+                {
+                    "ItemType": "ItemComebackCandy",
+                    "Notes": [1],
+                },
+            ]},
+            "Nice": { "Operator": "OR", "List": [
+                {
+                    "ItemType": "ItemStarCookie",
+                    "Notes": [0],
+                },
+                {
+                    "ItemType": "ItemComebackCandy",
+                    "Notes": [1],
+                },
+            ]},
+            "Great": { "Operator": "OR", "List": [
+                {
+                    "ItemType": "RoyalSnug",
+                    "MaxOwned": 1,
+                    "Notes": [0],
+                },
+                {
+                    "ItemType": "ItemStarCookie",
+                    "MaxRewarded": 5,
+                    "MaxOwned": 5,
+                    "Notes": [1],
+                },
+            ]},
+        },
+        "Notes": [
+            "only if you have no Royal Snugs",
+            "only if you have at least 1 Royal Snug",
+        ],
+    },
+}

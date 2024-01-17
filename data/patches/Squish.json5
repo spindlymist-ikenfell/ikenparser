@@ -1,0 +1,22 @@
+{
+    /**
+     * EnemySquishy may drop a small or red mushroom
+     * depending on the number rewarded + owned
+     */
+    "EnemySquishy": {
+        "Rewards": { "Operator": "OR", "List": [
+            {
+                "ItemType": "ItemSmallMushroom",
+                "MaxRewarded": 10,
+                "MaxOwned": 10,
+                "IsCombinedMax": true,
+            },
+            {
+                "ItemType": "ItemRedMushroom",
+                "MaxRewarded": 2,
+                "MaxOwned": 2,
+                "IsCombinedMax": true,
+            },
+        ]},
+    },
+}

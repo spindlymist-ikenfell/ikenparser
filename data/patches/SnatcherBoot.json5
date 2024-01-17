@@ -1,0 +1,46 @@
+{
+    /**
+     * Hardy Ones can be stolen from EnemySnatcherBoot, but if
+     * you have too many you always get a mini melon
+     */
+    "EnemySnatcherBoot": {
+        "Stealable": {
+            "Oops": { "Operator": "OR", "List": [
+                {
+                    "ItemType": "HardyOnes",
+                    "MaxRewarded": 1,
+                    "MaxOwned": 3,
+                },
+                {
+                    "ItemType": "ItemMiniMelon",
+                    //"Notes": [0],
+                },
+            ]},
+            "Nice": { "Operator": "OR", "List": [
+                {
+                    "ItemType": "HardyOnes",
+                    "MaxRewarded": 1,
+                    "MaxOwned": 3,
+                },
+                {
+                    "ItemType": "ItemMiniMelon",
+                    //"Notes": [0],
+                },
+            ]},
+            "Great": { "Operator": "OR", "List": [
+                {
+                    "ItemType": "HardyOnes",
+                    "MaxRewarded": 1,
+                    "MaxOwned": 3,
+                },
+                {
+                    "ItemType": "ItemMiniMelon",
+                    //"Notes": [0],
+                },
+            ]},
+        },
+        "Notes": [
+            //"only if preceding item(s) can't be acquired",
+        ],
+    },
+}

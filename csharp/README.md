@@ -1,0 +1,1 @@
+Open `Ikenfell/LittleWitch.dll` in [ILSpy](https://github.com/icsharpcode/ILSpy). Right-click the `LittleWitch` assembly and select `Save Code...`. Then save `LittleWitch.csproj` to this directory.

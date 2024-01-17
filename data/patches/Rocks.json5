@@ -1,0 +1,50 @@
+{
+    /**
+     * EnemyRock has a 25% chance to drop a small mushroom
+     * even if you're already at the limit
+     */
+    "EnemyRock": {
+        "Rewards": { "Operator": "AND", "List": [{
+            "ItemType": "ItemSmallMushroom",
+            "MaxRewarded": 1,
+            "MaxOwned": 5,
+            "Notes": [0],
+        }]},
+        "Notes": [
+            "has a 25% chance to drop even if you're at the limit",
+        ],
+    },
+
+    /**
+     * The GetRewards method of EnemyRockLair duplicates the behavior
+     * of ShouldReward<ItemRedMushroom>(1, 5)
+     */
+    "EnemyRockLair": {
+        "Rewards": { "Operator": "AND", "List": [{
+            "ItemType": "ItemRedMushroom",
+            "MaxRewarded": 1,
+            "MaxOwned": 5,
+        }]},
+    },
+
+    /**
+     * EnemyRockLairRed rewards a rock nut if you have none, otherwise
+     * it duplicates ShouldReward<ItemRockSeed>(1, 3)
+     */
+    "EnemyRockLairRed": {
+        "Rewards": { "Operator": "OR", "List": [
+            {
+                "ItemType": "ItemRockNut",
+                "MaxRewarded": 1,
+                "MaxOwned": 1,
+                "IsCombinedMax": true,
+            },
+            {
+                "ItemType": "ItemRockSeed",
+                "MaxRewarded": 1,
+                "MaxOwned": 3,
+                "IsCombinedMax": true,
+            },
+        ]},
+    },
+}

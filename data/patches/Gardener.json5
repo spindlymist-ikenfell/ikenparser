@@ -1,0 +1,41 @@
+{
+    /**
+     * PrizePoppies are stolen from EnemyGardener and
+     * EnemyGardener2 on a Great, but only if none have
+     * been rewarded yet
+     */
+    "EnemyGardener": {
+        "Stealable": {
+            "Oops": { "Operator": "AND", "List": [
+                { "ItemType": "ItemVeggieStew" },
+            ]},
+            "Nice": { "Operator": "AND", "List": [
+                { "ItemType": "ItemVeggieStew" },
+            ]},
+            "Great": { "Operator": "AND", "List": [
+                { "ItemType": "ItemVeggieStew" },
+                {
+                    "ItemType": "PrizePoppies",
+                    "MaxRewarded": 1,
+                },
+            ]},
+        },
+    },
+    "EnemyGardener2": {
+        "Stealable": {
+            "Oops": { "Operator": "AND", "List": [
+                { "ItemType": "ItemPrizeMedal" },
+            ]},
+            "Nice": { "Operator": "AND", "List": [
+                { "ItemType": "ItemPrizeMedal" },
+            ]},
+            "Great": { "Operator": "AND", "List": [
+                { "ItemType": "ItemPrizeMedal" },
+                {
+                    "ItemType": "PrizePoppies",
+                    "MaxRewarded": 1,
+                },
+            ]},
+        },
+    },
+}
