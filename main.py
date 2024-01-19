@@ -13,6 +13,8 @@ from ikenparser.data.patches import import_patches, apply_patches
 from ikenparser.data.sprites import copy_sprites_to
 import ikenparser.config as cfg
 
+# cfg.DEBUG = True
+
 if __name__ == "__main__":
     enemy_classes = []
     item_classes = {}
@@ -53,6 +55,5 @@ if __name__ == "__main__":
         remove_abstract_classes(enemy_classes)
         remove_unused_fields(enemy_classes)
 
-    # with open("../ikenfell-bestiary/src/enemies.json", "w") as file:
     with open("./enemies.json", "w") as file:
         json.dump(enemy_classes, file, default=vars, indent=4)

@@ -81,7 +81,7 @@ SetSprite = re.compile(r'^base\.Anims\.Sprite = Assets\.GetSprite\("' + SpriteID
 GetExpLambda = re.compile(r'^GetExpFunc = (\(BattleSystem sys\) => (.+);)$')     # GetExpFunc = (BattleSystem sys) => ...;
 GetExpDelegate = re.compile(r'^GetExpFunc = (delegate\(BattleSystem sys\))$')    # GetExpFunc = delegate(BattleSystem sys)
 GetMoneyLambda = re.compile(r'^GetMoneyFunc = (\(BattleSystem sys\) => (.+);)$') # GetExpFunc = (BattleSystem sys) => ...;
-NoExpOrMoney = re.compile(r'^NoExpOrMoney();$')
+NoExpOrMoney = re.compile(r'^NoExpOrMoney\(\);$')
 
 YieldNothing = fn_regex(r'yield break;')
 YieldOneOrMoreItems = fn_regex(r'(\s*yield return Items\.Get<\w+>\(\);)+')

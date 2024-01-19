@@ -39,9 +39,17 @@ def parse_Init_method(match, lines, enemy):
         elif (match := re.search(patterns.SetMov, line)) is not None:
             enemy.Mov = int(match.group(1))
         elif (match := re.search(patterns.SetExp, line)) is not None:
-            enemy.Exp = int(match.group(1))
+            exp = int(match.group(1))
+            enemy.Exp = {
+                "Min": exp,
+                "Max": exp,
+            }
         elif (match := re.search(patterns.SetMoney, line)) is not None:
-            enemy.Money = int(match.group(1))
+            money = int(match.group(1))
+            enemy.Money = {
+                "Min": money,
+                "Max": money,
+            }
         elif (match := re.search(patterns.GetExpLambda, line)) is not None:
             enemy.GetExp = match.group(1)
         elif (match := re.search(patterns.GetExpDelegate, line)) is not None:
@@ -49,8 +57,16 @@ def parse_Init_method(match, lines, enemy):
         elif (match := re.search(patterns.GetMoneyLambda, line)) is not None:
             enemy.GetMoney = match.group(1)
         elif (match := re.search(patterns.NoExpOrMoney, line)) is not None:
-            enemy.Exp = 0
-            enemy.Money = 0
+            enemy.Exp = {
+                "Min": 0,
+                "Max": 0,
+            }
+            enemy.Money = {
+                "Min": 0,
+                "Max": 0,
+            }
+            enemy.GetExp = "(BattleSystem sys) => 0;"
+            enemy.GetMoney = "(BattleSystem sys) => 0;"
         elif (match := re.search(patterns.SetSprite, line)) is not None:
             enemy.Sprite = match.group("SpriteID")
             enemy.SpriteSet = match.group("SpriteSet")

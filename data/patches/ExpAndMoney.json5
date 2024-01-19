@@ -1,0 +1,93 @@
+{
+    /**
+     * Fake tiles have special exp logic.
+     */
+     "EnemyFakeTileBlue": {
+        "Exp": {
+            "Min": 2,
+            "Max": 23,
+        },
+    },
+    "EnemyFakeTileRed": {
+        "Exp": {
+            "Min": 2,
+            "Max": 3,
+        },
+    },
+
+    /**
+     * EnemyGhrostling has special exp logic.
+     */
+    "EnemyGhrostling": {
+        "Exp": {
+            "Min": 1,
+            "Max": 2,
+        },
+    },
+
+    /**
+     * EnemyFuzzy has special money/exp logic.
+     */
+    "EnemyFuzzy": {
+        "Money": {
+            "Min": 1,
+            "Max": 2,
+        },
+        "Exp": {
+            "Min": 1,
+            "Max": 2,
+        },
+    },
+
+    /**
+     * Pane enemies have special exp logic.
+     */
+     "EnemyPaneAttacker": {
+        "Exp": {
+            "Min": 2,
+            "Max": 3,
+        },
+    },
+    "EnemyPaneBlocker": {
+        "Exp": {
+            "Min": 2,
+            "Max": 3,
+        },
+    },
+    "EnemyPaneHealer": {
+        "Exp": {
+            "Min": 2,
+            "Max": 3,
+        },
+    },
+
+    /**
+     * EnemyPants has special exp logic.
+     */
+    "EnemyPants": {
+        "Exp": {
+            "Min": 5,
+            "Max": 6,
+        },
+    },
+
+    /**
+     * EnemyStinker has special exp logic.
+     */
+     "EnemyStinker": {
+        "Exp": {
+            "Min": 8,
+            "Max": 10,
+        },
+    },
+
+    /**
+     * EnemyTinyStar has special exp logic.
+     */
+     "EnemyTinyStar": {
+        "Exp": {
+            "Min": 8,
+            "Max": 10,
+        },
+    },
+}

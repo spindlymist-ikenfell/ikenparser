@@ -13,7 +13,9 @@ def import_patches():
                 continue
 
             with open(entry.path, "r", encoding="utf-8") as file:
-                patches |= pyjson5.load(file)
+                for (key, patch) in pyjson5.load(file).items():
+                    patches[key] = patches.get(key, {})
+                    patches[key] |= patch
 
     return patches
 
