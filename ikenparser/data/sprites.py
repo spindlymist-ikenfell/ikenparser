@@ -6,7 +6,7 @@ def copy_sprites_to(output_dir, enemy_classes, item_classes):
     sprites_dir = os.path.join(cfg.DATA_PATH, "sprites")
     to_copy = set()
 
-    for sprite_class in chain(enemy_classes, item_classes.values()):
+    for sprite_class in chain(enemy_classes, item_classes):
         if (sprite_class.Sprite is None):
             print (sprite_class.ClassName, "no sprite")
         else:

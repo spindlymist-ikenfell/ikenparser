@@ -7,7 +7,7 @@ from ikenparser.parse import parse_file
 from ikenparser.process.inheritance import resolve_derived_classes
 from ikenparser.process.resolve_strings import resolve_enemy_names, resolve_item_names, resolve_reward_names
 from ikenparser.process.rewards import derive_rewards, derive_stealable, add_sprites_to_rewards
-from ikenparser.process.cleanup import remove_unused_fields, remove_abstract_classes
+from ikenparser.process.cleanup import remove_unused_fields, remove_abstract_classes, filter_unused_items
 from ikenparser.data.strings import import_strings
 from ikenparser.data.patches import import_patches, apply_patches
 from ikenparser.data.sprites import copy_sprites_to
@@ -17,7 +17,7 @@ import ikenparser.config as cfg
 
 if __name__ == "__main__":
     enemy_classes = []
-    item_classes = {}
+    item_map = {}
 
     with os.scandir("./csharp/LittleWitch") as files:
         for entry in files:
@@ -32,7 +32,7 @@ if __name__ == "__main__":
                 if isinstance(result, Enemy):
                     enemy_classes.append(result)
                 elif isinstance(result, Item):
-                    item_classes[result.ClassName] = result
+                    item_map[result.ClassName] = result
 
     resolve_derived_classes(enemy_classes)
 
@@ -43,12 +43,14 @@ if __name__ == "__main__":
     patches = import_patches()
     apply_patches(enemy_classes, patches)
 
+    item_classes = filter_unused_items(enemy_classes, item_map)
+
     strings = import_strings()
     resolve_enemy_names(enemy_classes, strings)
     resolve_item_names(item_classes, strings)
-    resolve_reward_names(enemy_classes, item_classes)
+    resolve_reward_names(enemy_classes, item_map)
 
-    add_sprites_to_rewards(enemy_classes, item_classes)
+    add_sprites_to_rewards(enemy_classes, item_map)
     # copy_sprites_to("../ikenfell-bestiary/public/images/sprites", enemy_classes, item_classes)
 
     if not cfg.DEBUG:

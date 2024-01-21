@@ -24,14 +24,11 @@ def resolve_enemy_names(enemy_classes, strings):
         enemy_class.Name = resolve_string(enemy_class.NameID, strings, enemy_class.ClassName)
 
 def resolve_item_names(item_classes, strings):
-    for item_class in item_classes.values():
+    for item_class in item_classes:
         item_class.Name = resolve_string(item_class.NameID, strings, item_class.ClassName)
 
-def resolve_reward_names(enemy_classes, item_classes):
+def resolve_reward_names(enemy_classes, item_map):
     for enemy_class in enemy_classes:
-        for reward in enemy_class.Rewards["List"]:
-            reward["ItemName"] = item_classes[reward["ItemType"]].Name
-
-        for rewards in enemy_class.Stealable.values():
-            for reward in rewards["List"]:
-                reward["ItemName"] = item_classes[reward["ItemType"]].Name
+        for reward in enemy_class.iter_rewards():
+            item_type = reward["ItemType"]
+            reward["ItemName"] = item_map[item_type].Name

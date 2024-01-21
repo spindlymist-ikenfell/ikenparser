@@ -41,7 +41,6 @@ def derive_rewards(enemy_class):
                 "ItemType": match.group(6),
                 "MaxRewarded": int(match.group(4)),
                 "MaxOwned": int(match.group(5)),
-                # "Notes": [enemy_class.addNote("only if preceding item(s) can't be acquired")],
             },
         ], "OR")
     else:
@@ -94,7 +93,6 @@ def derive_stealable(enemy_class):
                     "ItemType": match.group(6),
                     "MaxRewarded": int(match.group(4)),
                     "MaxOwned": int(match.group(5)),
-                    # "Notes": [enemy_class.addNote("only if preceding item(s) can't be acquired")],
                 },
             ], "OR"),
         }
@@ -116,7 +114,6 @@ def derive_stealable(enemy_class):
                 },
                 {
                     "ItemType": match.group(1),
-                    # "Notes": [enemy_class.addNote("only if preceding item(s) can't be acquired")],
                 },
             ], "OR"),
         }
@@ -132,7 +129,6 @@ def derive_stealable(enemy_class):
                 },
                 {
                     "ItemType": match.group(1),
-                    # "Notes": [enemy_class.addNote("only if preceding item(s) can't be acquired")],
                 },
             ], "OR"),
         }
@@ -161,12 +157,8 @@ def derive_stealable(enemy_class):
             "Great": make_rewards([{ "ItemType": "Unknown" }]),
         }
 
-def add_sprites_to_rewards(enemy_classes, item_classes):
+def add_sprites_to_rewards(enemy_classes, item_map):
     for enemy_class in enemy_classes:
-        for reward in enemy_class.Rewards["List"]:
-            item = item_classes[reward["ItemType"]]
-            reward["ItemSprite"] = item.Sprite
-        for timing in enemy_class.Stealable:
-            for reward in enemy_class.Stealable[timing]["List"]:
-                item = item_classes[reward["ItemType"]]
-                reward["ItemSprite"] = item.Sprite
+        for reward in enemy_class.iter_rewards():
+            item_type = reward["ItemType"]
+            reward["ItemSprite"] = item_map[item_type].Sprite
