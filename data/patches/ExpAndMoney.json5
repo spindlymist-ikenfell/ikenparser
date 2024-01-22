@@ -5,7 +5,7 @@
      "EnemyFakeTileBlue": {
         "Exp": {
             "Min": 2,
-            "Max": 23,
+            "Max": 3,
         },
     },
     "EnemyFakeTileRed": {
