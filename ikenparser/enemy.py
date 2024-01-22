@@ -37,5 +37,5 @@ class Enemy:
         oops = self.Stealable["Oops"]["List"]
         nice = self.Stealable["Nice"]["List"]
         great = self.Stealable["Great"]["List"]
-        
+
         return chain(drops, oops, nice, great)

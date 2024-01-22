@@ -9,8 +9,14 @@ BaseEnemyType.Pow = 10
 BaseEnemyType.Def = 10
 BaseEnemyType.Spd = 7
 BaseEnemyType.Mov = 3
-BaseEnemyType.Exp = 1
-BaseEnemyType.Money = 0
+BaseEnemyType.Exp = {
+    "Min": 1,
+    "Max": 1,
+}
+BaseEnemyType.Money = {
+    "Min": 0,
+    "Max": 0,
+}
 BaseEnemyType.GetRewards = """public override IEnumerable<ItemType> GetRewards(BattleSystem system, BattleUnit unit)
 {
 %syield break;

@@ -68,7 +68,7 @@ def parse_Init_method(match, lines, enemy):
             enemy.GetExp = "(BattleSystem sys) => 0;"
             enemy.GetMoney = "(BattleSystem sys) => 0;"
         elif (match := re.search(patterns.SetSprite, line)) is not None:
-            enemy.Sprite = match.group("SpriteID")
+            enemy.Sprite = match.group("SpriteName")
             enemy.SpriteSet = match.group("SpriteSet")
         elif line == "{":
             brace_count += 1

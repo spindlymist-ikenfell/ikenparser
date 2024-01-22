@@ -10,8 +10,7 @@ def parse_item(match, lines):
     while (line := next(lines, None)) is not None:
         if (match := re.search(patterns.ItemInitializerList, line)) is not None:
             item.NameID = match.group(1)
-            item.Sprite = match.group("SpriteID")
+            item.Sprite = match.group("SpriteName")
             item.SpriteSet = match.group("SpriteSet")
-            break
 
     return item

@@ -56,7 +56,7 @@ ItemTypes = [
 ]
 
 StringIDToken = re.compile(r'\$([a-z0-9_])*')
-SpriteID = r'(?P<SpriteID>(?P<SpriteSet>[^"]+)_(\d)+_(\d)+)'
+SpriteName = r'(?P<SpriteName>(?P<SpriteSet>[^"]+)_(\d)+_(\d)+)'
 
 EnemyClassDefinition = re.compile(r'^public( abstract)? class (Enemy\w+) : (' + '|'.join(EnemyTypes) + r')$')
 EnemyInitMethodDefinition = re.compile(r'^public override void Init\(\)$')
@@ -64,7 +64,7 @@ GetStealMethodDefinition = re.compile(r'^(public override IEnumerable<ItemType> 
 GetRewardsMethodDefinition = re.compile(r'^(public override IEnumerable<ItemType> GetRewards\(BattleSystem system, BattleUnit unit\))$')
 
 ItemClassDefinition = re.compile(r'^public class (\w+) : (' + '|'.join(ItemTypes) + r')$')
-ItemInitializerList = re.compile(r'^: base\("([^"]+)", "' + SpriteID + r'".*\)$')
+ItemInitializerList = re.compile(r'^: base\("([^"]+)", "' + SpriteName + r'".*\)$')
 
 SetNameID = re.compile(r'^base\.NameID = "([^"]*)";$')         # base.NameID = "$aeldra_name";
 SetCategory = re.compile(r'^base\.Category = ')                # base.Category = UnitCategory.Flying | UnitCategory.Human;
@@ -76,7 +76,7 @@ SetSpd = re.compile(r'^SetBaseStat\(UnitStat\.Spd, (\d+)\);$') # SetBaseStat(Uni
 SetMov = re.compile(r'^SetBaseStat\(UnitStat\.Mov, (\d+)\);$') # SetBaseStat(UnitStat.Mov, 4);
 SetExp = re.compile(r'^base\.Exp = (\d+);$')                   # base.Exp = 0;
 SetMoney = re.compile(r'^base\.Money = (\d+);$')               # base.Money = 0;
-SetSprite = re.compile(r'^base\.Anims\.Sprite = Assets\.GetSprite\("' + SpriteID + r'"\);$') # base.Anims.Sprite = Assets.GetSprite("battle_aeldra_0_0");
+SetSprite = re.compile(r'^base\.Anims\.Sprite = Assets\.GetSprite\("' + SpriteName + r'"\);$') # base.Anims.Sprite = Assets.GetSprite("battle_aeldra_0_0");
 
 GetExpLambda = re.compile(r'^GetExpFunc = (\(BattleSystem sys\) => (.+);)$')     # GetExpFunc = (BattleSystem sys) => ...;
 GetExpDelegate = re.compile(r'^GetExpFunc = (delegate\(BattleSystem sys\))$')    # GetExpFunc = delegate(BattleSystem sys)
