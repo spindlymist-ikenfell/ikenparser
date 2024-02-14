@@ -14,13 +14,11 @@
                 },
                 {
                     "ItemType": "ItemDemonEye",
-                    //"Notes": [1],
                 },
             ]},
         },
         "Notes": [
             "only once per battle",
-            //"only if preceding item(s) can't be acquired",
         ],
     }
 }
