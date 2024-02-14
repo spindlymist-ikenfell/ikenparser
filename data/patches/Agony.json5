@@ -1,0 +1,9 @@
+{
+    /**
+     * Agony is a simple silhouette at the start of the battle.
+     */
+    "EnemyAgony": {
+        "Sprite": "battle_agony_3_0",
+        "SpriteSet": "battle_agony",
+    }
+}

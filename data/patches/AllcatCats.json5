@@ -3,13 +3,19 @@
      * EnemyAllcatCat derivatives don't have an Init() method but
      * instead override InitCat() which is called by base.Init()
      */
-     "EnemyAllcatGrey": {
+    "EnemyAllcatGrey": {
         "NameID": "$sooty",
+        "Sprite": "battle_cat_19_0",
+        "SpriteSet": "battle_cat",
     },
     "EnemyAllcatOrange": {
         "NameID": "$tabby",
+        "Sprite": "battle_cat_11_0",
+        "SpriteSet": "battle_cat",
     },
     "EnemyAllcatWhite": {
         "NameID": "$snowy",
+        "Sprite": "battle_cat_0_0",
+        "SpriteSet": "battle_cat",
     },
 }
