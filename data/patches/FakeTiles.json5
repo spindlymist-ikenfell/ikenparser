@@ -1,0 +1,13 @@
+{
+    /**
+     * Undersnoop/undersloop inherit from EnemyFakeTile which constructs the sprite name for them.
+     */
+    "EnemyFakeTileBlue": {
+        "Sprite": "battle_bluetile_0_0",
+        "SpriteSet": "battle_bluetile",
+    },
+    "EnemyFakeTileRed": {
+        "Sprite": "battle_redtile_0_0",
+        "SpriteSet": "battle_redtile",
+    },
+}
