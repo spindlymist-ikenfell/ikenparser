@@ -24,6 +24,8 @@ class Enemy:
         self.Sprite = None
         self.SpriteSet = None
         self.Notes = []
+        self.NameTokens = []
+        self.RewardTokens = []
     
     def add_note(self, note):
         try:

@@ -8,6 +8,7 @@ from ikenparser.parse import parse_file
 from ikenparser.process.inheritance import resolve_derived_classes
 from ikenparser.process.resolve_strings import resolve_enemy_names, resolve_item_names, resolve_reward_names
 from ikenparser.process.rewards import derive_rewards, derive_stealable, add_sprites_to_rewards
+from ikenparser.process.tokens import add_search_tokens
 from ikenparser.process.cleanup import remove_unused_fields, remove_abstract_classes, filter_unused_items
 from ikenparser.data.strings import import_strings
 from ikenparser.data.patches import import_patches, apply_patches
@@ -62,6 +63,8 @@ def main():
     resolve_enemy_names(enemy_classes, strings)
     resolve_item_names(item_classes, strings)
     resolve_reward_names(enemy_classes, item_map)
+
+    add_search_tokens(enemy_classes)
 
     (enemy_sprite_map, __, __) = resolve_sprites(enemy_classes)
     (item_sprite_map, item_max_width, item_max_height) = resolve_sprites(item_classes)
